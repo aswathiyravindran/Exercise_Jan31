@@ -16,6 +16,10 @@ public class MainActivity extends ActionBarActivity
 {
 	Button b1,b2,b3,b4,b5,b6,b7,b8,b9,add,eql,mul,sub,div,c;
 	EditText ed1;
+	float mValueOne , mValueTwo ;
+	 
+    boolean mAddition , mSubtract ,mMultiplication ,mDivision ;
+ 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +49,46 @@ public class MainActivity extends ActionBarActivity
 			
 			}
 		});
+b1.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				
+				
+				
+			
+			}
+		});
+b2.setOnClickListener(new View.OnClickListener() {
+	
+	@Override
+	public void onClick(View arg0) {
+		
+		
+		
+	
+	}
+});
+b3.setOnClickListener(new View.OnClickListener() {
+	
+	@Override
+	public void onClick(View arg0) {
+		
+		
+		
+	
+	}
+});
+b4.setOnClickListener(new View.OnClickListener() {
+	
+	@Override
+	public void onClick(View arg0) {
+		String data=ed1.getText().toString();
+		
+		
+	
+	}
+});
     }
 
     
