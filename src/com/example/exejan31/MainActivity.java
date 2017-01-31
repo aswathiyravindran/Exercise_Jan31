@@ -16,9 +16,9 @@ public class MainActivity extends ActionBarActivity
 {
 	Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,add,eql,mul,sub,div,c,dt;
 	EditText ed1;
-	float mValueOne , mValueTwo ;
+	float ValueOne , ValueTwo ;
 	 
-    boolean mAddition , mSubtract ,mMultiplication ,mDivision ;
+    boolean mAdd , mSub ,mMul ,mDiv ;
  
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -157,8 +157,8 @@ dt.setOnClickListener(new View.OnClickListener() {
 sub.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        mValueOne = Float.parseFloat(ed1.getText() + "");
-        mSubtract = true ;
+        ValueOne = Float.parseFloat(ed1.getText() + "");
+        mSub = true ;
         ed1.setText(null);
     }
 });
@@ -166,16 +166,16 @@ sub.setOnClickListener(new View.OnClickListener() {
 mul.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        mValueOne = Float.parseFloat(ed1.getText() + "");
-        mMultiplication = true ;
+        ValueOne = Float.parseFloat(ed1.getText() + "");
+        mMul = true ;
         ed1.setText(null);
     }
 });
 div.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        mValueOne = Float.parseFloat(ed1.getText() + "");
-        mDivision = true ;
+        ValueOne = Float.parseFloat(ed1.getText() + "");
+        mDiv = true ;
         ed1.setText(null);
     }
 });
@@ -183,14 +183,57 @@ div.setOnClickListener(new View.OnClickListener() {
 add.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        mValueOne = Float.parseFloat(ed1.getText() + "");
-        mAddition = true ;
+        ValueOne = Float.parseFloat(ed1.getText() + "");
+        mAdd= true ;
         ed1.setText(null);
     }
 });
 
-    }
+    
+
+    eql.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            ValueTwo = Float.parseFloat(ed1.getText() + "");
+
+            if (mAdd == true){
+
+                ed1.setText(ValueOne + ValueTwo +"");
+                mAdd=false;
+            }
+
+
+            if (mSub == true){
+                ed1.setText(ValueOne - ValueTwo+"");
+                mSub=false;
+            }
+
+            if (mMul == true){
+                ed1.setText(ValueOne * ValueTwo+"");
+                mMul=false;
+            }
+
+            if (mDiv == true){
+                ed1.setText(ValueOne / ValueTwo+"");
+                mDiv=false;
+            }
+        }
+    });
+
+    c.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            ed1.setText("");
+        }
+    });
+
+    dt.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            ed1.setText(ed1.getText()+".");
+        }
+    });
 
     
-    
+}
 }
