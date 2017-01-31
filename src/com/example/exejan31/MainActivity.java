@@ -14,7 +14,7 @@ import android.widget.EditText;
 
 public class MainActivity extends ActionBarActivity 
 {
-	Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,add,eql,mul,sub,div,c,dot;
+	Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,add,eql,mul,sub,div,c,dt;
 	EditText ed1;
 	float mValueOne , mValueTwo ;
 	 
@@ -24,7 +24,7 @@ public class MainActivity extends ActionBarActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ed1=(EditText)findViewById(R.id.ed1);
+        ed1=(EditText)findViewById(R.id.ed2);
         b1=(Button) findViewById(R.id.b1);
         b2=(Button) findViewById(R.id.b2);
         b3=(Button) findViewById(R.id.b3);
@@ -35,12 +35,13 @@ public class MainActivity extends ActionBarActivity
         b8=(Button) findViewById(R.id.b8);
         b9=(Button) findViewById(R.id.b9);
         b0=(Button) findViewById(R.id.b0);
+        
         add=(Button) findViewById(R.id.add);
         mul=(Button) findViewById(R.id.mul);
         div=(Button) findViewById(R.id.div);
         eql=(Button) findViewById(R.id.eq);
         c=(Button) findViewById(R.id.clr);
-        dot=(Button) findViewById(R.id.dt);
+        dt=(Button) findViewById(R.id.dt);
         
         b0.setOnClickListener(new View.OnClickListener() {
 			
@@ -143,7 +144,7 @@ b9.setOnClickListener(new View.OnClickListener() {
 	
 	}
 });
-dot.setOnClickListener(new View.OnClickListener() {
+dt.setOnClickListener(new View.OnClickListener() {
 	
 	@Override
 	public void onClick(View arg0) {
