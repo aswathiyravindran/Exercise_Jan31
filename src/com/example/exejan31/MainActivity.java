@@ -1,7 +1,5 @@
 package com.example.exejan31;
 
-
-
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,229 +9,212 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-
-public class MainActivity extends ActionBarActivity 
-{
-	Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,add,eql,mul,sub,div,c,dt;
-	EditText ed1;
+public class MainActivity extends ActionBarActivity {
+	EditText ed;
+	Button zero;
+	Button one;
+	Button two;
+	Button three,four,five,six;
+	Button seven,eight,nine,equal;
+	Button add,sub,mul,div,del,dot;
 	float ValueOne , ValueTwo ;
 	 
     boolean mAdd , mSub ,mMul ,mDiv ;
+    String operator;
  
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ed1=(EditText)findViewById(R.id.ed2);
-        b1=(Button) findViewById(R.id.b1);
-        b2=(Button) findViewById(R.id.b2);
-        b3=(Button) findViewById(R.id.b3);
-        b4=(Button) findViewById(R.id.b4);
-        b5=(Button) findViewById(R.id.b5);
-        b6=(Button) findViewById(R.id.b6);
-        b7=(Button) findViewById(R.id.b7);
-        b8=(Button) findViewById(R.id.b8);
-        b9=(Button) findViewById(R.id.b9);
-        b0=(Button) findViewById(R.id.b0);
-        
+        ed=(EditText) findViewById(R.id.ed2);
+        zero=(Button) findViewById(R.id.b0);
+        one=(Button) findViewById(R.id.b1);
+        two=(Button) findViewById(R.id.b2);
+        three=(Button) findViewById(R.id.b3);
+        four=(Button) findViewById(R.id.b4);
+        five=(Button) findViewById(R.id.b5);
+        six=(Button) findViewById(R.id.b6);
+        seven=(Button) findViewById(R.id.b7);
+        eight=(Button) findViewById(R.id.b8);
+        nine=(Button) findViewById(R.id.b9);
+        equal=(Button) findViewById(R.id.eq);
         add=(Button) findViewById(R.id.add);
+        sub=(Button) findViewById(R.id.sub);
         mul=(Button) findViewById(R.id.mul);
         div=(Button) findViewById(R.id.div);
-        eql=(Button) findViewById(R.id.eq);
-        c=(Button) findViewById(R.id.clr);
-        dt=(Button) findViewById(R.id.dt);
+        del=(Button) findViewById(R.id.clr);
+        dot=(Button) findViewById(R.id.dt);
         
-        b0.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				
-				ed1.setText(ed1.getText()+"0");
-				
-			
-			}
-		});
-        b1.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				
-				ed1.setText(ed1.getText()+"1");
-				
-			
-			}
-		});
-        b2.setOnClickListener(new View.OnClickListener() {
-	
-	@Override
-	public void onClick(View arg0) {
-		
-		
-		ed1.setText(ed1.getText()+"2");
-	
-	}
-});
-b3.setOnClickListener(new View.OnClickListener() {
-	
-	@Override
-	public void onClick(View arg0) {
-		
-		
-		ed1.setText(ed1.getText()+"3");
-	
-	}
-});
-b4.setOnClickListener(new View.OnClickListener() {
-	
-	@Override
-	public void onClick(View arg0) {
-		
-		ed1.setText(ed1.getText()+"4");
-		
-	
-	}
-});
-b5.setOnClickListener(new View.OnClickListener() {
-	
-	@Override
-	public void onClick(View arg0) {
-		
-		
-		ed1.setText(ed1.getText()+"5");
-	
-	}
-});
-b6.setOnClickListener(new View.OnClickListener() {
-	
-	@Override
-	public void onClick(View arg0) {
-		
-		
-		ed1.setText(ed1.getText()+"6");
-	
-	}
-});
-
-b7.setOnClickListener(new View.OnClickListener() {
-	
-	@Override
-	public void onClick(View arg0) {
-		
-		ed1.setText(ed1.getText()+"7");
-		
-	
-	}
-});
-b8.setOnClickListener(new View.OnClickListener() {
-	
-	@Override
-	public void onClick(View arg0) {
-		
-		ed1.setText(ed1.getText()+"8");
-		
-	
-	}
-});
-b9.setOnClickListener(new View.OnClickListener() {
-	
-	@Override
-	public void onClick(View arg0) {
-		
-		ed1.setText(ed1.getText()+"9");
-		
-	
-	}
-});
-dt.setOnClickListener(new View.OnClickListener() {
-	
-	@Override
-	public void onClick(View arg0) {
-		
-		ed1.setText(ed1.getText()+"9");
-		
-	
-	}
-});
-sub.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        ValueOne = Float.parseFloat(ed1.getText() + "");
-        mSub = true ;
-        ed1.setText(null);
-    }
-});
-
-mul.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        ValueOne = Float.parseFloat(ed1.getText() + "");
-        mMul = true ;
-        ed1.setText(null);
-    }
-});
-div.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        ValueOne = Float.parseFloat(ed1.getText() + "");
-        mDiv = true ;
-        ed1.setText(null);
-    }
-});
-
-add.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        ValueOne = Float.parseFloat(ed1.getText() + "");
-        mAdd= true ;
-        ed1.setText(null);
-    }
-});
-
-    
-
-    eql.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            ValueTwo = Float.parseFloat(ed1.getText() + "");
-
-            if (mAdd == true){
-
-                ed1.setText(ValueOne + ValueTwo +"");
-                mAdd=false;
+        zero.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            	ed.setText(null);
+            	ed.setText(ed.getText()+"0");
             }
-
-
-            if (mSub == true){
-                ed1.setText(ValueOne - ValueTwo+"");
-                mSub=false;
+        });
+        one.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            	ed.setText(null);
+                ed.setText(ed.getText()+"1");
             }
-
-            if (mMul == true){
-                ed1.setText(ValueOne * ValueTwo+"");
-                mMul=false;
+        });
+        	
+        two.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            	ed.setText(null);
+            	ed.setText(ed.getText()+"2");
             }
-
-            if (mDiv == true){
-                ed1.setText(ValueOne / ValueTwo+"");
-                mDiv=false;
+        });
+        
+        three.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            	ed.setText(null);
+            	ed.setText(ed.getText()+"3");
             }
-        }
-    });
-
-    c.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            ed1.setText("");
-        }
-    });
-
-    dt.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            ed1.setText(ed1.getText()+".");
-        }
-    });
-
-    
-}
-}
+        });
+        
+        four.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            	ed.setText(null);
+            	ed.setText(ed.getText()+"4");
+            }
+        });
+        
+       five.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            	ed.setText(null);
+            	ed.setText(ed.getText()+"5");
+            }
+        });
+       
+        six.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            	ed.setText(null);
+            	ed.setText(ed.getText()+"6");
+            }
+        });
+        
+        seven.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            	ed.setText(null);
+            	ed.setText(ed.getText()+"7");
+            }
+        });
+        
+        eight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            	ed.setText(null);
+            	ed.setText(ed.getText()+"8");
+            }
+        });
+        
+        nine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            	ed.setText(null);
+            	ed.setText(ed.getText()+"9");
+            }
+        });
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+ 
+                if (ed == null){
+                	
+                    ed.setText("");
+                }else {
+                    ValueOne = Float.parseFloat(ed.getText() + "");
+                    mAdd = true;
+                    operator="+";
+                    ed.setText(operator);
+                    //ed.setText(null);
+                }
+            }
+        });
+ 
+        sub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ValueOne = Float.parseFloat(ed.getText() + "");
+                mSub = true ;
+                operator="-";
+                //ed.setText(null);
+                ed.setText(operator);
+            }
+        });
+ 
+        mul.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ValueOne = Float.parseFloat(ed.getText() + "");
+                mMul = true ;
+                operator="*";
+                //ed.setText(null);
+                ed.setText(operator);
+            }
+        });
+ 
+        div.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ValueOne = Float.parseFloat(ed.getText()+"");
+                mDiv = true ;
+                operator="/";
+                //ed.setText(null);
+                ed.setText(operator);
+            }
+        });
+ 
+        equal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ValueTwo = Float.parseFloat(ed.getText() + "");
+ 
+                if (mAdd == true){
+ 
+                    ed.setText(ValueOne + ValueTwo +"");
+                    mAdd=false;
+                }
+ 
+ 
+                if (mSub == true){
+                    ed.setText(ValueOne - ValueTwo+"");
+                    mSub=false;
+                }
+ 
+                if (mMul == true){
+                    ed.setText(ValueOne * ValueTwo+"");
+                    mMul=false;
+                }
+ 
+                if (mDiv == true){
+                    ed.setText(ValueOne / ValueTwo+"");
+                    mDiv=false;
+                }
+            }
+        });
+ 
+        del.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ed.setText("");
+            }
+        });
+ 
+        dot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ed.setText(ed.getText()+".");
+            }
+        });
+    }
+ 
+}   	
