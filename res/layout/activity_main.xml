@@ -7,6 +7,15 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.exejan31.MainActivity" >
+    <EditText
+        android:id="@+id/ed1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/b2"
+        android:layout_alignLeft="@+id/b1"
+        android:layout_marginBottom="18dp"
+        android:ems="10"
+        android:inputType="number" />
 
     <Button
         android:id="@+id/b5"
@@ -124,24 +133,6 @@
         android:text="+" />
 
     <Button
-        android:id="@+id/b4"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/b5"
-        android:layout_alignRight="@+id/ed"
-        android:text="4" />
-
-    <Button
-        android:id="@+id/b3"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/b5"
-        android:layout_alignLeft="@+id/b7"
-        android:text="3" />
-
-    <Button
         android:id="@+id/b2"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
@@ -156,17 +147,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/b5"
-        android:layout_below="@+id/ed"
         android:layout_marginTop="61dp"
         android:text="1" />
 
-    <EditText
-        android:id="@+id/ed"
+    <Button
+        android:id="@+id/b3"
+        style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_above="@+id/b5"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="59dp"
-        android:ems="10" />
+        android:text="3" />
+
+    <Button
+        android:id="@+id/b4"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/b5"
+        android:layout_alignLeft="@+id/add"
+        android:text="4" />
+
     
+
 </RelativeLayout>
