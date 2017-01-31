@@ -14,7 +14,7 @@ import android.widget.EditText;
 
 public class MainActivity extends ActionBarActivity 
 {
-	Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,add,eql,mul,sub,div,c;
+	Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b0,add,eql,mul,sub,div,c,dot;
 	EditText ed1;
 	float mValueOne , mValueTwo ;
 	 
@@ -40,6 +40,8 @@ public class MainActivity extends ActionBarActivity
         div=(Button) findViewById(R.id.div);
         eql=(Button) findViewById(R.id.eq);
         c=(Button) findViewById(R.id.clr);
+        dot=(Button) findViewById(R.id.dt);
+        
         b0.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -141,7 +143,50 @@ b9.setOnClickListener(new View.OnClickListener() {
 	
 	}
 });
+dot.setOnClickListener(new View.OnClickListener() {
+	
+	@Override
+	public void onClick(View arg0) {
+		
+		ed1.setText(ed1.getText()+"9");
+		
+	
+	}
+});
+sub.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        mValueOne = Float.parseFloat(ed1.getText() + "");
+        mSubtract = true ;
+        ed1.setText(null);
+    }
+});
 
+mul.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        mValueOne = Float.parseFloat(ed1.getText() + "");
+        mMultiplication = true ;
+        ed1.setText(null);
+    }
+});
+div.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        mValueOne = Float.parseFloat(ed1.getText() + "");
+        mDivision = true ;
+        ed1.setText(null);
+    }
+});
+
+add.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        mValueOne = Float.parseFloat(ed1.getText() + "");
+        mAddition = true ;
+        ed1.setText(null);
+    }
+});
 
     }
 

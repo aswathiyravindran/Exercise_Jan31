@@ -95,15 +95,6 @@
         android:text="/" />
 
     <Button
-        android:id="@+id/clr"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/add"
-        android:layout_alignTop="@+id/div"
-        android:text="C" />
-
-    <Button
         android:id="@+id/b9"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
@@ -168,6 +159,24 @@
         android:layout_alignLeft="@+id/add"
         android:text="4" />
 
-    
+    <Button
+        android:id="@+id/dt"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/add"
+        android:layout_alignTop="@+id/div"
+        android:text="." />
+
+    <Button
+        android:id="@+id/clr"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/sub"
+        android:layout_alignRight="@+id/dt"
+        android:layout_below="@+id/mul"
+        android:layout_marginTop="16dp"
+        android:text="Clear" />
 
 </RelativeLayout>
